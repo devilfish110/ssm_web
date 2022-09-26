@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="WARN" xmlns="http://logging.apache.org/log4j/2.0/config">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:MM:ss:SSS} [%t] [%level] [%C %L line] -%msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!--排除不需要的日志-->
+        <Logger name="org.springframework" level="INFO" additivity="false"/>
+        <Logger name="org.apache.ibatis" level="INFO" additivity="false"/>
+        <Logger name="com.baomidou.mybatisplus" level="INFO" additivity="false"/>
+        <Root level="DEBUG">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>
